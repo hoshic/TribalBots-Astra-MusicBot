@@ -32,7 +32,7 @@ if(!int.guild) return
                 .setThumbnail(client.user.displayAvatarURL())
                 .setDescription("Hello, in order to use the discord bot commands mentioned below, you need to vote on the **top.gg** site for the Astra bot to develop and grow faster. Each vote is valid for 12 hours, during which time you can continue to use these commands.\n**[VOTE ASTRA](https://top.gg/bot/924325576095973426/vote)**\n"+client.config.opt.DJ.commands.map(astra => '`'+astra+'`').join(", "))
                 .setTimestamp()
-                .setFooter({ text: 'Music Bot - by Umut Bayraktar ❤️', iconURL: int.user.displayAvatarURL({ dynamic: true }) })
+                .setFooter({ text: (client.user.username), iconURL: int.user.displayAvatarURL({ dynamic: true }) })
                 return int.reply({ embeds: [embed], ephemeral: true}).catch(e => {})
             } else {
 
@@ -52,7 +52,7 @@ if(!int.guild) return
                       .setDescription("You must have the <@&"+djRole+">(DJ) role set on this server to use this command. Users without this role cannot use the "+client.config.opt.DJ.commands.map(astra => '`'+astra+'`').join(", "))
                       .addField("Invite Bot", `**[Add Me](https://bit.ly/3PHDjyC) | [Vote](https://bit.ly/3LYzaDe) | [Support](https://discord.gg/ST89uArTdh) | [Website](https://astrabot.vercel.app/) | [Source Code](https://github.com/1umutda/MusicBot)**` ,true)
                       .setTimestamp()
-                      .setFooter({ text: 'Music Bot - by Umut Bayraktar ❤️', iconURL:int.user.displayAvatarURL({ dynamic: true }) });
+                      .setFooter({ text: (client.user.username), iconURL:int.user.displayAvatarURL({ dynamic: true }) });
                       return int.reply({ content: `${int.user}`, embeds: [embed], ephemeral: true}).catch(e => { })
                   }}}}
                 }
@@ -83,7 +83,7 @@ if(!int.guild) return
               .setDescription("You must have the <@&"+djRole+">(DJ) role set on this server to use this command. Users without this role cannot use the "+client.config.opt.DJ.commands.map(astra => '`'+astra+'`').join(", "))
               .addField("Invite Bot", `**[Add Me](https://bit.ly/3PHDjyC) | [Vote](https://bit.ly/3LYzaDe) | [Support](https://discord.gg/ST89uArTdh) | [Website](https://astrabot.vercel.app/) | [Source Code](https://github.com/1umutda/MusicBot)**` ,true)
               .setTimestamp()
-              .setFooter({ text: 'Music Bot - by Umut Bayraktar ❤️', iconURL:int.user.displayAvatarURL({ dynamic: true }) });
+              .setFooter({ text: (client.user.username), iconURL:int.user.displayAvatarURL({ dynamic: true }) });
               return int.reply({ content: `${int.user}`, embeds: [embed], ephemeral: true}).catch(e => { })
           }}}}
         }
@@ -113,7 +113,7 @@ if(!int.guild) return
           .addField(`Saved Server`, `\`${int.guild.name}\``)
           .addField(`Requested By`, `${queue.current.requestedBy}`)
           .setTimestamp()
-          .setFooter({ text: 'Music Bot Commands - by Umut Bayraktar ❤️', iconURL: int.user.displayAvatarURL({ dynamic: true }) });
+          .setFooter({ text: (client.user.username), iconURL: int.user.displayAvatarURL({ dynamic: true }) });
           int.member.send({ embeds: [embed] }).then(() => {
                 return int.reply({ content: `I sent you the name of the music in a private message ✅`, embeds: [], components: [], ephemeral: true}).catch(e => { })
             }).catch(error => {
@@ -138,7 +138,7 @@ if(!int.guild) return
             .setThumbnail(client.user.displayAvatarURL())
             .setTimestamp()
             .setDescription(`${progress} (**${timestamp.progress}**%)`)
-            .setFooter({ text: 'Music Bot Commands - by Umut Bayraktar ❤️', iconURL: int.user.displayAvatarURL({ dynamic: true }) });
+            .setFooter({ text: (client.user.username), iconURL: int.user.displayAvatarURL({ dynamic: true }) });
             int.message.edit({ embeds: [embed] }).catch(e => { })
             int.reply({ content: `**✅ Success:** Time data updated. `, embeds: [], components: [], ephemeral: true}).catch(e => { })
         }
