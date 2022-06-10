@@ -76,7 +76,7 @@ let embed =  new MessageEmbed({
  thumbnail: { url: `${g.thumbnail}` },
  color: "BLUE",
  description:  "THIS COMMAND IS OUT OF TIME!\nYOU CAN USE IT AGAIN!",
- footer: { text: `Astra Lyrics` },
+ footer: { text: client.user.username },
 })
 
 await interaction.editReply({
