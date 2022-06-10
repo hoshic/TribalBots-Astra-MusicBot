@@ -23,7 +23,7 @@ module.exports = {
                 .setDescription(`> **Guilds: \`${client.guilds.cache.size}\`**
 > **Users: \`${Math.ceil(client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString("tr-TR"))}.000\`**
 > **Channels: \`${client.channels.cache.size}\`**`)
-interaction.reply({embeds:[embed], components:[button]}).then(async Message => {
+                      interaction.reply({embeds:[embed], components:[button]}).then(async Message => {
                     
                     const filter = i =>  i.user.id === interaction.user.id
                     let col = await interaction.channel.createMessageComponentCollector({filter, time: 180000 });
@@ -42,7 +42,7 @@ interaction.reply({embeds:[embed], components:[button]}).then(async Message => {
                         .setDescription(`> **Guilds: \`${client.guilds.cache.size}\`**
 > **Users: \`${Math.ceil(client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString("tr-TR"))}.000\`**
 > **Channels: \`${client.channels.cache.size}\`**`)
-await interaction.editReply({embeds: [embedd]}).catch(e => { });
+                      await interaction.editReply({embeds: [embedd]}).catch(e => { });
                         button.reply({content: "> **✅ Success:** Bot statistics updated!", ephemeral: true}).catch(e => { });
             
                         break
@@ -77,7 +77,7 @@ await interaction.editReply({embeds: [embedd]}).catch(e => { });
                         .setDescription(`> **Guilds: \`${client.guilds.cache.size}\`**
 > **Users: \`${Math.ceil(client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString("tr-TR"))}.000\`**
 > **Channels: \`${client.channels.cache.size}\`**`)
-await interaction.editReply({embeds: [embedd], components:[button]}).catch(e => { });
+                      await interaction.editReply({embeds: [embedd], components:[button]}).catch(e => { });
                     })
                 }).catch(e => { });
     },
